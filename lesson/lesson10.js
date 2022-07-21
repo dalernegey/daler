@@ -1,78 +1,32 @@
+const user = {
+    name: 'Shaxzod',
+    surName: 'Adams',
+    age: 15,
+    isMarried: false,
+    scores: [2,2,2,2,3],
+    passport: {
+        serries: 'AC',
+        number: 232134124
+    },
+    fullName: () => {
+        return user.name + ' ' + user.surName
+    } 
+}
 
-    let arr = [
-        {
-            "userId": 1,
-            "id": 1,
-            "title": "delectus aut au`tem",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 2,
-            "title": "quis ut nam facilis et officia qui",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 3,
-            "title": "fugiat veniam minus",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 4,
-            "title": "et porro tempora",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 5,
-            "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 6,
-            "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 7,
-            "title": "illo expedita consequatur quia in",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 8,
-            "title": "quo adipisci enim quam ut ab",
-            "completed": true
-        },
-        {
-            "userId": 1,
-   
-            "id": 9,
-            "title": "molestiae perspiciatis ipsa",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 10,
-            "title": "illo est ratione doloremque quia maiores aut",
-            "completed": true
-        },
-    ]
-    let a = {
-        count: arr.length,
-        arr: []
-    }
-   
-    let b = {
-        count:  arr.length,
-        arr: []
-    }
+let user_school = {
+    number: 35,
+    adress: 'dinamo',
+    director: 'umida shodiyevna' 
+}
 
+let a = Object.assign(user, user_school)
+let b = Object.values(a)
+let c = Object.keys(a)
+let d = b.concat(c)
 
-    arr.map(item => item.completed === true ? a.arr.push(item) : b.arr.push(item))
-
-    console.log(a,b);
+let types = {
+    number: [d.filter(item => typeof(item) == "number")],
+    string: [d.filter(item => typeof(item) == "string")],
+    object: [d.filter(item => typeof(item) == "object")],
+    boolean: [d.filter(item => typeof(item) == "boolean")]
+}
